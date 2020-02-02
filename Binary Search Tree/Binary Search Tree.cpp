@@ -7,14 +7,14 @@ int main()
     BSTree BST;
     BST.setStartNode(8);
     Node* startptr = &BST.StartingNode;
-    Node three(3);
-    Node ten(10);
-    Node one(1);
-    Node six(6);
-    Node fourteen(14);
-    Node four(4);
-    Node seven(7);
-    Node thirteen(13);
+    Node* three = new Node(3);
+    Node* ten = new Node(10);
+    Node* one = new Node(1);
+    Node* six = new Node(6);
+    Node* fourteen = new Node(14);
+    Node* four = new Node(4);
+    Node* seven = new Node(7);
+    Node* thirteen = new Node(13);
     BST.appendNode(three, startptr);
     BST.appendNode(ten, startptr);
     BST.appendNode(one, startptr);
@@ -25,6 +25,17 @@ int main()
     BST.appendNode(thirteen, startptr);
 
     //BST.findNumber(3, startptr, "");
+
+    delete three;
+    delete ten;
+    delete one;
+    delete six;
+    delete fourteen;
+    delete four;
+    delete seven;
+    delete thirteen;
+
+    
     
 
     std::cout << "finished";

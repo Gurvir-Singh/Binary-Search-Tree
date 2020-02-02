@@ -14,25 +14,25 @@ public :
 	}
 
 
-	void appendNode(Node& nodeToAppend, Node* StartPos) {
-		if (nodeToAppend.NodeValue > StartPos->NodeValue) {
+	void appendNode(Node* nodeToAppend, Node* StartPos) {
+		if (nodeToAppend->NodeValue > StartPos->NodeValue) {
 
 			if (StartPos->hasRightNode) {
 				appendNode(nodeToAppend, StartPos->rightNode);
 			}
 			else
 			{
-				StartPos->AppendNode(nodeToAppend);
+				StartPos->AddNode(nodeToAppend);
 			}
 		}
-		else if (nodeToAppend.NodeValue < StartPos->NodeValue) {
+		else if (nodeToAppend->NodeValue < StartPos->NodeValue) {
 
 			if (StartPos->hasLeftNode) {
 				appendNode(nodeToAppend, StartPos->leftNode);
 			}
 			else
 			{
-				StartPos->AppendNode(nodeToAppend);
+				StartPos->AddNode(nodeToAppend);
 			}
 		}
 		else

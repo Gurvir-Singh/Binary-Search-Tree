@@ -1,5 +1,4 @@
 #pragma once
-#include <memory>
 #include <iostream>
 class Node {
 
@@ -15,17 +14,17 @@ class Node {
 		Node* leftNode = nullptr;
 		Node* rightNode = nullptr;
 
-		void AppendNode(Node nodeToAppend) {
-			if (nodeToAppend.NodeValue > this->NodeValue) {
-				rightNode = &nodeToAppend;
+		void AddNode(Node* nodeToAppend) {
+			if (nodeToAppend->NodeValue > this->NodeValue) {
+				rightNode = nodeToAppend;
 				hasRightNode = true;
 			}
-			else if (nodeToAppend.NodeValue < this->NodeValue) {
-				leftNode = &nodeToAppend;
+			else if (nodeToAppend->NodeValue < this->NodeValue) {
+				leftNode = nodeToAppend;
 				hasLeftNode = true;
 				;
 			}
-			else if (nodeToAppend.NodeValue == this->NodeValue) {
+			else if (nodeToAppend->NodeValue == this->NodeValue) {
 				std::cout << "Node already exists.";
 			}
 		}
