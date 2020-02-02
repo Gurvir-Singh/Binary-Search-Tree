@@ -9,7 +9,7 @@ public :
 	Node StartingNode;	
 
 
-	void setStartNode(int valueToSet) {
+	BSTree(int valueToSet) {
 		StartingNode.NodeValue = valueToSet;
 	}
 
@@ -41,18 +41,18 @@ public :
 		}
 	}
 
-	void findNumber(int numToFind, Node* Pos, std::string list) {
+	void findNumber(int numToFind, Node* Pos, std::string list = "") {
 		
 		if (Pos->NodeValue == numToFind) {
 			list += std::to_string(numToFind);
 			std::cout << list;
 		}
 		else if (Pos->NodeValue > numToFind) {
-			list += std::to_string(numToFind) + ", ";
+			list += std::to_string(Pos->NodeValue) + ", ";
 			findNumber(numToFind, Pos->leftNode, list);
 		}
 		else if (Pos->NodeValue < numToFind) {
-			list += std::to_string(numToFind) + ", ";
+			list += std::to_string(Pos->NodeValue) + ", ";
 			findNumber(numToFind, Pos->rightNode, list);
 		}
 	}
