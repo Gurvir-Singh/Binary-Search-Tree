@@ -1,13 +1,18 @@
 #pragma once
 #include "Node.h"
+#include <String>
+#include <vector>
 class BSTree {
+	
 public :
 
-	Node StartingNode;
-	
+	Node StartingNode;	
+
+
 	void setStartNode(int valueToSet) {
 		StartingNode.NodeValue = valueToSet;
 	}
+
 
 	void appendNode(Node& nodeToAppend, Node* StartPos) {
 		if (nodeToAppend.NodeValue > StartPos->NodeValue) {
@@ -35,5 +40,28 @@ public :
 			std::cout << "Node already exists.";
 		}
 	}
+
+	void findNumber(int numToFind, Node* Pos, std::string list) {
+		
+		if (Pos->NodeValue == numToFind) {
+			list += std::to_string(numToFind);
+			std::cout << list;
+		}
+		else if (Pos->NodeValue > numToFind) {
+			list += std::to_string(numToFind) + ", ";
+			findNumber(numToFind, Pos->leftNode, list);
+		}
+		else if (Pos->NodeValue < numToFind) {
+			list += std::to_string(numToFind) + ", ";
+			findNumber(numToFind, Pos->rightNode, list);
+		}
+	}
+
+	void printTree() {
+		//int Tree[9][9];
+		//Tree[0][0] = StartingNode.NodeValue;
+
+	}
+
 
 };
