@@ -5,15 +5,24 @@
 class BSTree {
 	
 public :
-
 	Node StartingNode;	
-
-
-	BSTree(int valueToSet) {
-		StartingNode.NodeValue = valueToSet;
+	std::vector<Node*> NodePtrs;
+	 
+	BSTree(int rootVal) {
+		this->StartingNode.NodeValue = rootVal;
 	}
 
+	~BSTree() {
+		for(int i = 0; i < NodePtrs.size(); i++) {
+			delete NodePtrs.at(i);
+		}
+	}
 
+	void addNumber(int numToAdd) {
+		NodePtrs.push_back(new Node(numToAdd));
+		appendNode(NodePtrs.back(), &StartingNode);
+	}
+	 
 	void appendNode(Node* nodeToAppend, Node* StartPos) {
 		if (nodeToAppend->NodeValue > StartPos->NodeValue) {
 
@@ -45,7 +54,7 @@ public :
 		
 		if (Pos->NodeValue == numToFind) {
 			list += std::to_string(numToFind);
-			std::cout << list;
+			std::cout << list << "\n\n";
 		}
 		else if (Pos->NodeValue > numToFind) {
 			list += std::to_string(Pos->NodeValue) + ", ";
@@ -57,6 +66,7 @@ public :
 		}
 	}
 
+	//will implement in the future
 	void printTree() {
 		//int Tree[9][9];
 		//Tree[0][0] = StartingNode.NodeValue;

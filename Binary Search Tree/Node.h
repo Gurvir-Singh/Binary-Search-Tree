@@ -4,11 +4,12 @@ class Node {
 
 	public:
 
-		Node(int val = 1) {
-			this->NodeValue = val;
-		}	
-
 		int NodeValue;
+
+		Node(int nodeVal = 1) {
+			NodeValue = nodeVal;
+		}
+		
 		bool hasLeftNode = false;
 		bool hasRightNode = false;
 		Node* leftNode = nullptr;
@@ -22,7 +23,7 @@ class Node {
 			else if (nodeToAppend->NodeValue < this->NodeValue) {
 				leftNode = nodeToAppend;
 				hasLeftNode = true;
-				;
+				
 			}
 			else if (nodeToAppend->NodeValue == this->NodeValue) {
 				std::cout << "Node already exists.";
