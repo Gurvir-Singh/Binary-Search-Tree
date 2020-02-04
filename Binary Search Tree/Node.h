@@ -5,8 +5,10 @@ class Node {
 	public:
 
 	int NodeValue;
-
-	Node(int nodeVal = 1) {
+        
+	Node() {}
+	
+	Node(int nodeVal) {
 		NodeValue = nodeVal;
 	}
 		
