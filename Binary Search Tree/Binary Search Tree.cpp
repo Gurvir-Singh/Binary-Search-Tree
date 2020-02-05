@@ -32,7 +32,7 @@ void run() {
             BST.findNumber(numToFind, &BST.StartingNode);
         }
         else if (option == 3) {
-            break;
+            exitSelected = true;
         }
         else {
             std::cout << "Please enter a valid option" << std::endl;

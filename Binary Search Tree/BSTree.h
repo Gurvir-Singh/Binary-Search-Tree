@@ -13,7 +13,7 @@ public :
 	}
 
 	~BSTree() {
-		for(int i = 0; i <= NodePtrs.size(); i++) {
+		for(int i = 0; i < NodePtrs.size(); i++) {
 			delete NodePtrs.at(i);
 		}
 	}
