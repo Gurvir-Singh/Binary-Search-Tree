@@ -41,7 +41,7 @@ void BSTree::appendNode(Node* nodeToAppend, Node* StartPos) {
 	}
 }
 
-void BSTree::findNumber(int numToFind, Node* Pos, std::string list = "") {
+void BSTree::findNumber(int numToFind, Node* Pos, std::string list) {
 
 	if (Pos->NodeValue == numToFind) {
 		list += std::to_string(numToFind);
