@@ -150,12 +150,10 @@
     <ClCompile Include="Binary Search Tree.cpp" />
     <ClCompile Include="BSTree.cpp" />
     <ClCompile Include="Node.cpp" />
-    <ClCompile Include="Run.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BSTree.h" />
     <ClInclude Include="Node.h" />
-    <ClInclude Include="Run.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

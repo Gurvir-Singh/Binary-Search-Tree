@@ -18,5 +18,4 @@ public :
 
 	void findNumber(int numToFind, Node* Pos, std::string list = "");
 
-
 };
